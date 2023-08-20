@@ -1,0 +1,55 @@
+MUST HAVE:
+
+(A) Full Appraisal Residential - As is
+    As if Complete
+
+(B) Should be able to select more than one report type 
+
+(C) Order created and need to add another contact, not possible by client
+    Add contact attribute - Home, Work, Cell
+
+(D) Client tabs:
+	File status
+	Notes
+	Documents
+	Action
+
+(E) Reviewer login access
+
+(F) Do not send a notifier for the following:
+	(a) Attempted to reach contact -
+	(b) Left message
+	(c) Contact requested appraiser
+	(d) Realtor's
+Let these not show up on the top right bubble
+
+(G) For appraisal exception:
+	(a) The 5 notifications will not have a notifier, just file status update
+	(b) appraisal console needs a new milestone
+
+(H) Exceptions list should change with reasons to be delayed
+
+(I) Ability to search by exception in the left side filter
+
+(J) Exceptions for appointment confirmed status need to be notified and available to the client to resolve
+
+(K) Once an exception is resolved we need to make sure that the same exception can be flagged again
+
+(L) When the new appointment date is updated, the pertinent exception needs to be cleared
+
+(M) Melinda & Dan to discuss with mike on sending emails when a note is created
+
+(N) Appointment date/time should have 15 minute increments
+
+(O) Client needs a milestone for APPOINTMENT CONFIRMED. Appointment date/time should be displayed in the ORDER tab page
+
+(P) Client provided matrix which shows the mapping between appraiser/reviewer candidates will be used to create the respective login profiles. See attached excel sheet
+
+
+
+Currently out of scope -
+
+NICE TO HAVE:
+
+(A) Distance between appraiser and property 
+    When the exception checkbox is checked, the date and time is it mandatory ?

@@ -1,0 +1,7 @@
+use appraisal_connect;
+
+DELETE FROM tbl_users;
+
+INSERT INTO tbl_users ( USR_EMAIL, USR_FIRST_NAME, USR_MIDDLE_NAME, USR_LAST_NAME, USR_ORG_ID, USR_ORG_ROLE ) VALUES ( 'test@hotmail.com', 'John','Stan','Smith','RBC001','MDM' );
+INSERT INTO tbl_users ( USR_EMAIL, USR_FIRST_NAME, USR_MIDDLE_NAME, USR_LAST_NAME, USR_ORG_ID, USR_ORG_ROLE ) VALUES ( 'jack@hotmail.com', 'Jack','Eric','Cummings','RBC001','LAWYER' );
+INSERT INTO tbl_users ( USR_EMAIL, USR_FIRST_NAME, USR_MIDDLE_NAME, USR_LAST_NAME, USR_ORG_ID, USR_ORG_ROLE ) VALUES ( 'sue@gmail.com', 'Susan','Mary','Jones','TD001','MDM' );

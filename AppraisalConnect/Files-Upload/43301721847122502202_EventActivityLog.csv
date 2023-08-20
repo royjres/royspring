@@ -1,0 +1,132 @@
+Date,Time,Category,Subject,Body
+2017-03-25,15:10:50,guests_added,Guests Added,8 guests have been added to the guest list
+2017-03-25,15:12:56,guests_added,Guests Added,3 guests have been added to the guest list
+2017-03-25,15:16:50,guests_added,Guests Added,4 guests have been added to the guest list
+2017-03-25,15:20:47,guests_added,Guests Added,8 guests have been added to the guest list
+2017-03-25,15:23:40,guests_added,Guests Added,10 guests have been added to the guest list
+2017-03-25,15:24:49,guests_added,Guests Added,4 guests have been added to the guest list
+2017-03-25,15:27:20,guests_added,Guests Added,3 guests have been added to the guest list
+2017-03-25,15:28:08,guests_added,Guests Added,1 guest have been added to the guest list
+2017-03-25,15:28:27,guests_added,Guests Added,1 guest have been added to the guest list
+2017-03-25,15:31:41,guests_added,Guests Added,2 guests have been added to the guest list
+2017-03-25,17:47:29,guest_list_management,Guests Removed,1 guest removed: aussyseq
+2017-03-25,17:48:03,guests_added,Guests Added,1 guest have been added to the guest list
+2017-03-25,17:55:30,invitation_updated,Invite Sent,Event sent to 45 guests by Email
+2017-03-25,17:55:52,view_email,Email View,chandrika.shenoy viewed the email invitation
+2017-03-25,18:06:07,view_email,Email View,ahmed.parkar viewed the email invitation
+2017-03-25,18:25:40,view_email,Email View,mnagaraja viewed the email invitation
+2017-03-25,18:30:59,view_email,Email View,lovejonathan2000 viewed the email invitation
+2017-03-25,18:35:53,view_email,Email View,sharonjoel viewed the email invitation
+2017-03-25,18:36:00,view_web,Web Page View,sharonjoel viewed the event web page
+2017-03-25,18:43:42,view_email,Email View,jyothifern viewed the email invitation
+2017-03-25,18:48:47,view_email,Email View,hems_rawal viewed the email invitation
+2017-03-25,18:48:58,view_email,Email View,joelien.jose viewed the email invitation
+2017-03-25,18:51:35,view_email,Email View,deepikalobo viewed the email invitation
+2017-03-25,18:52:26,view_email,Email View,vpereira viewed the email invitation
+2017-03-25,18:52:56,view_web,Web Page View,vpereira viewed the event web page
+2017-03-25,18:52:56,rsvp_reply_yes,RSVP Received,vpereira replied yes
+2017-03-25,18:58:00,view_email,Email View,pranav_rawal viewed the email invitation
+2017-03-25,18:58:05,view_web,Web Page View,pranav_rawal viewed the event web page
+2017-03-25,18:59:13,view_email,Email View,allwynhenriques viewed the email invitation
+2017-03-25,18:59:49,view_web,Web Page View,allwynhenriques viewed the event web page
+2017-03-25,19:00:48,rsvp_reply_yes,RSVP Received,allwynhenriques replied yes
+2017-03-25,19:37:38,view_email,Email View,alwynr.lobo viewed the email invitation
+2017-03-25,20:07:06,view_email,Email View,sanjaycastelino viewed the email invitation
+2017-03-25,21:21:15,view_email,Email View,ronsdsouza viewed the email invitation
+2017-03-25,21:21:19,view_web,Web Page View,ronsdsouza viewed the event web page
+2017-03-25,21:28:49,view_email,Email View,devend viewed the email invitation
+2017-03-25,21:49:38,view_email,Email View,sbasty viewed the email invitation
+2017-03-25,21:50:03,view_web,Web Page View,sbasty viewed the event web page
+2017-03-25,21:50:03,rsvp_reply_yes,RSVP Received,sbasty replied yes
+2017-03-25,21:50:35,view_email,Email View,ldcunha viewed the email invitation
+2017-03-25,21:50:42,view_web,Web Page View,ldcunha viewed the event web page
+2017-03-25,21:50:42,rsvp_reply_yes,RSVP Received,ldcunha replied yes
+2017-03-25,22:05:22,view_email,Email View,keithlewis07 viewed the email invitation
+2017-03-25,22:06:43,view_web,Web Page View,keithlewis07 viewed the event web page
+2017-03-25,22:06:49,rsvp_reply_yes,RSVP Received,keithlewis07 replied yes
+2017-03-25,22:09:31,private_message,Private Message,"Hi Roy/Jyothi
+
+Thank you for the invite.
+Leo Precy and Cassie will be there for the celebration.
+Love and blessings to kids"
+2017-03-25,22:15:54,view_email,Email View,jignasamt viewed the email invitation
+2017-03-25,22:16:17,view_email,Email View,cynthialewis2002 viewed the email invitation
+2017-03-25,22:17:03,view_web,Web Page View,cynthialewis2002 viewed the event web page
+2017-03-25,22:25:36,view_email,Email View,sumanjoseph viewed the email invitation
+2017-03-25,22:35:09,view_email,Email View,sharonp02 viewed the email invitation
+2017-03-25,23:01:07,view_email,Email View,ravilobo viewed the email invitation
+2017-03-25,23:15:14,view_email,Email View,sueyanne viewed the email invitation
+2017-03-25,23:21:45,view_web,Web Page View,jignasamt viewed the event web page
+2017-03-25,23:32:44,view_email,Email View,sharon.mendonca viewed the email invitation
+2017-03-25,23:33:45,view_web,Web Page View,sharon.mendonca viewed the event web page
+2017-03-25,23:33:52,rsvp_reply_yes,RSVP Received,sharon.mendonca replied yes
+2017-03-25,23:34:21,view_email,Email View,dsouza_anna viewed the email invitation
+2017-03-25,23:34:42,view_web,Web Page View,dsouza_anna viewed the event web page
+2017-03-25,23:34:42,rsvp_reply_yes,RSVP Received,dsouza_anna replied yes
+2017-03-25,23:36:59,view_email,Email View,sharmila_cd viewed the email invitation
+2017-03-25,23:37:18,view_web,Web Page View,sharmila_cd viewed the event web page
+2017-03-26,01:19:06,view_email,Email View,cletajenny viewed the email invitation
+2017-03-26,01:20:14,view_web,Web Page View,cletajenny viewed the event web page
+2017-03-26,01:21:26,rsvp_reply_yes,RSVP Received,cletajenny replied yes
+2017-03-26,01:23:45,private_message,Private Message,God bless Caitlyn on her first communion . Looking forward to celebrate this occasion with you all !
+2017-03-26,02:41:46,view_email,Email View,denzilp viewed the email invitation
+2017-03-26,05:51:07,email_bounce,Email Bounced,We were unable to deliver email message to lorrainedcruz at lorrainedcruz@yahoo.cagndc
+2017-03-26,05:51:16,email_bounce,Email Bounced,We were unable to deliver email message to denella2004 at denella2004@gmail.comfernandesthelma
+2017-03-26,12:54:30,view_email,Email View,carolinecastellino viewed the email invitation
+2017-03-26,17:19:48,view_web,Web Page View,ahmed.parkar viewed the event web page
+2017-03-26,17:37:39,view_email,Email View,neelkeera viewed the email invitation
+2017-03-26,17:38:15,view_web,Web Page View,neelkeera viewed the event web page
+2017-03-26,17:38:15,rsvp_reply_yes,RSVP Received,neelkeera replied yes
+2017-03-26,19:18:56,view_email,Email View,dimple.sequeira viewed the email invitation
+2017-03-26,19:19:01,view_web,Web Page View,dimple.sequeira viewed the event web page
+2017-03-26,20:55:49,view_web,Web Page View,deepikalobo viewed the event web page
+2017-03-26,20:55:49,rsvp_reply_yes,RSVP Received,deepikalobo replied yes
+2017-03-26,20:57:45,private_message,Private Message,"Hi Roy and Jyothi, 
+
+Thank you for the invite. We will be there to celebrate with Kaitlynn. 
+
+Ravi and Deepika."
+2017-03-27,17:05:13,view_email,Email View,lovinapereira viewed the email invitation
+2017-03-27,18:30:03,view_web,Web Page View,devend viewed the event web page
+2017-03-27,18:30:03,rsvp_reply_yes,RSVP Received,devend replied yes
+2017-03-27,18:31:34,private_message,Private Message,All 3 of us will definitely attend the same. Thanks for inviting though
+2017-03-27,21:51:23,view_web,Web Page View,denzilp viewed the event web page
+2017-03-27,21:51:23,rsvp_reply_yes,RSVP Received,denzilp replied yes
+2017-03-27,21:53:03,private_message,Private Message,Thanks for the invite dear Roy & Jyothi. We'll be there to celebrate Caitlyn's First Holy Communion.
+2017-03-27,23:08:34,view_email,Email View,rjcastellino viewed the email invitation
+2017-03-27,23:09:58,view_web,Web Page View,rjcastellino viewed the event web page
+2017-03-27,23:09:58,rsvp_reply_yes,RSVP Received,rjcastellino replied yes
+2017-03-28,09:39:21,view_email,Email View,niggsnigel viewed the email invitation
+2017-03-28,14:45:53,view_web,Web Page View,sueyanne viewed the event web page
+2017-03-28,14:45:53,rsvp_reply_yes,RSVP Received,sueyanne replied yes
+2017-03-28,14:47:43,private_message,Private Message,Thank you Roy and Jyothi for inviting us to be part of Caitlyn's special day.
+2017-03-29,16:33:14,view_web,Web Page View,hems_rawal viewed the event web page
+2017-03-29,16:33:14,rsvp_reply_yes,RSVP Received,hems_rawal replied yes
+2017-04-01,16:31:05,view_email,Email View,cybilnancy viewed the email invitation
+2017-04-01,16:35:04,view_web,Web Page View,cybilnancy viewed the event web page
+2017-04-01,16:35:04,rsvp_reply_yes,RSVP Received,cybilnancy replied yes
+2017-04-01,16:36:48,private_message,Private Message,Thanks for the invite. Sanjay's mom will be here too.
+2017-04-02,15:06:40,view_web,Web Page View,sanjaycastelino viewed the event web page
+2017-04-02,15:06:40,rsvp_reply_yes,RSVP Received,sanjaycastelino replied yes
+2017-04-02,15:07:49,private_message,Private Message,"Hello Roy/Jyothi, Nancy has responded and we will be attending. Thank you for inviting us."
+2017-04-03,18:13:47,rsvp_reply_yes,RSVP Received,sharmila_cd replied yes
+2017-04-03,18:15:12,private_message,Private Message,we will be there.  let us knoe if you need help
+2017-04-03,20:48:26,rsvp_reply_yes,RSVP Received,dimple.sequeira replied yes
+2017-04-03,21:40:05,rsvp_reply_yes,RSVP Received,sharonjoel replied yes
+2017-04-08,07:00:10,invitation_updated,Reminder Scheduled,Reminders sent to 25 guests by Email
+2017-04-08,07:12:03,view_web,Web Page View,alwynr.lobo viewed the event web page
+2017-04-08,07:12:10,rsvp_reply_yes,RSVP Received,alwynr.lobo replied yes
+2017-04-08,07:13:27,private_message,Private Message,"Hi Roy/Jyothi,
+
+Thanks for your invitation & we will be attending."
+2017-04-08,07:47:12,rsvp_reply_yes,RSVP Received,jignasamt replied yes
+2017-04-08,08:07:40,view_web,Web Page View,sharonp02 viewed the event web page
+2017-04-08,13:01:24,view_web,Web Page View,aannlobo viewed the event web page
+2017-04-08,13:02:42,rsvp_reply_yes,RSVP Received,aannlobo replied yes
+2017-04-08,14:24:42,rsvp_reply_yes,RSVP Received,cynthialewis2002 replied yes
+2017-04-08,18:55:51,email_bounce,Email Bounced,We were unable to deliver email message to denella2004 at denella2004@gmail.comfernandesthelma
+2017-04-08,18:56:49,email_bounce,Email Bounced,We were unable to deliver email message to lorrainedcruz at lorrainedcruz@yahoo.cagndc
+2017-04-09,22:00:53,view_web,Web Page View,chandrika.shenoy viewed the event web page
+2017-04-10,09:35:03,view_web,Web Page View,niggsnigel viewed the event web page
+2017-04-10,09:35:07,rsvp_reply_yes,RSVP Received,niggsnigel replied yes
+2017-04-10,14:41:26,rsvp_reply_yes,RSVP Received,ahmed.parkar replied yes
