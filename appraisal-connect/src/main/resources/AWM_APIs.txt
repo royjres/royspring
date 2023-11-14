@@ -1,0 +1,223 @@
+(1) CREATE ORDER API:
+
+REQUEST: 
+{
+    "newfile_filenum": "FNF-01-4548",
+    "newfile_username": "Roy Noronha",
+    "newfile_organization": "Fidelity National Financial",
+    "newfile_report_type": "Full Appraisal",
+    "newfile_client_loan_ref": "12345",
+    "newfile_loan_type": "Purchase/Mortgage",
+    "newfile_postalcode": "L4W5K7",
+    "newfile_city": "Mississauga",
+    "newfile_streetno": "5045",
+    "newfile_streetname": "Satellite Dr",
+    "newfile_suiteapt": "",
+    "newfile_prov": "ON",
+    "newfile_address": "5045 Satellite Dr, , Mississauga ON L4W5K7",
+    "newfile_estimated_prop_value": "$345,000.00",
+    "newfile_report_request_date": "2023-09-29",
+    "newfile_anticipated_closing_date": "",
+    "newfile_special_instructions": "this is a test",
+    "newfile_status": "File Open",
+    "newfile_appointment_datetime": "",
+    "newfile_appraiser": "",
+    "newfile_reviewer": "",
+    "newfile_inspection_complete": "",
+    "newfile_report_submitted": "",
+    "newfile_fileclosed": "",
+    "newfile_borrower": [
+        {
+            "borrowerfirstname": "John",
+            "borrowerlastname": "Smith"
+        },
+        {
+            "borrowerfirstname": "Jane",
+            "borrowerlastname": "Smith"
+        }
+    ],
+    "newfile_contact": [
+        {
+            "contactfirstname": "John",
+            "contactlastname": "Smith",
+            "contactphone": "9051234567",
+            "contactemail": "john@test.com"
+        },
+        {
+            "contactfirstname": "Jane",
+            "contactlastname": "Smith",
+            "contactphone": "9051234568",
+            "contactemail": "jane@hotmail.com"
+        }
+    ],
+    "newfile_fileupload": [
+        {
+            "fileuploadname": "1695524558427_Bonus Visual.pdf",
+            "fileuploadtime": "2023-09-23 11:02:38"
+        }
+    ]
+}
+
+
+
+
+
+
+
+
+(2). ORDER ENQUIRY FOR NON-ATC STAFF:
+
+REQUEST: {
+		username: 
+	}
+
+
+RESPONSE:  ALL RECORDS CREATED BY USERNAME
+
+json array[ {
+    newfile_filenum: string;
+    newfile_username: string;
+    newfile_organization: string;
+    newfile_report_type: string ;
+    newfile_client_loan_ref: string;
+    newfile_loan_type : string;
+    newfile_postalcode: string;
+    newfile_city: string;
+    newfile_streetno: string;
+    newfile_streetname: string;
+    newfile_suiteapt: string;
+    newfile_prov: string;
+    newfile_address: string; 
+    newfile_estimated_prop_value : string;
+    newfile_report_request_date : string;
+    newfile_anticipated_closing_date : string;
+    newfile_special_instructions : string;
+    newfile_status: string;
+    newfile_appointment_datetime: string;
+    newfile_appraiser: string;
+    newfile_reviewer: string;
+    newfile_inspection_complete: string;
+    newfile_report_submitted: string;
+    newfile_fileclosed: string;
+  },
+	{
+	},
+	{
+	}
+]
+
+
+
+
+
+
+
+(3)  ORDER ENQUIRY FOR ATC STAFF:
+
+REQUEST:  N/A
+
+RESPONSE:  ALL RECORDS 
+
+json array[ {
+    newfile_filenum: string;
+    newfile_username: string;
+    newfile_organization: string;
+    newfile_report_type: string ;
+    newfile_client_loan_ref: string;
+    newfile_loan_type : string;
+    newfile_postalcode: string;
+    newfile_city: string;
+    newfile_streetno: string;
+    newfile_streetname: string;
+    newfile_suiteapt: string;
+    newfile_prov: string;
+    newfile_address: string; 
+    newfile_estimated_prop_value : string;
+    newfile_report_request_date : string;
+    newfile_anticipated_closing_date : string;
+    newfile_special_instructions : string;
+    newfile_status: string;
+    newfile_appointment_datetime: string;
+    newfile_appraiser: string;
+    newfile_reviewer: string;
+    newfile_inspection_complete: string;
+    newfile_report_submitted: string;
+    newfile_fileclosed: string;
+  },
+	{
+	},
+	{
+	}
+]
+
+
+
+
+
+(4)  ORDER DETAILS ENQUIRY:
+
+REQUEST: {
+		filenum: 
+	}
+
+
+RESPONSE:
+
+{
+    "newfile_filenum": "",
+    "newfile_username": "",
+    "newfile_organization": "",
+    "newfile_report_type": "",
+    "newfile_client_loan_ref": "1",
+    "newfile_loan_type": "",
+    "newfile_postalcode": "",
+    "newfile_city": "",
+    "newfile_streetno": "",
+    "newfile_streetname": "",
+    "newfile_suiteapt": "",
+    "newfile_prov": "",
+    "newfile_address": "",
+    "newfile_estimated_prop_value": "",
+    "newfile_report_request_date": "",
+    "newfile_anticipated_closing_date": "",
+    "newfile_special_instructions": "",
+    "newfile_status": "",
+    "newfile_appointment_datetime": "",
+    "newfile_appraiser": "",
+    "newfile_reviewer": "",
+    "newfile_inspection_complete": "",
+    "newfile_report_submitted": "",
+    "newfile_fileclosed": "",
+    "newfile_borrower": [
+        {
+            "borrowerfirstname": "",
+            "borrowerlastname": ""
+        },
+        {
+            "borrowerfirstname": "",
+            "borrowerlastname": ""
+        }
+    ],
+    "newfile_contact": [
+        {
+            "contactfirstname": "",
+            "contactlastname": "",
+            "contactphone": "",
+            "contactemail": ""
+        },
+        {
+            "contactfirstname": "",
+            "contactlastname": "",
+            "contactphone": "",
+            "contactemail": ""
+        }
+    ],
+    "newfile_fileupload": [
+        {
+            "fileuploadname": "",
+            "fileuploadtime": ""
+        }
+    ]
+}
+
+

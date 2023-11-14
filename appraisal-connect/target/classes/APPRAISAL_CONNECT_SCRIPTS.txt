@@ -1,0 +1,193 @@
+ORGANIZATION
+ORG_ID
+ORG_NAME
+ORG_ADDRESS
+ORG_INIT_DT
+
+
+USERS
+USR_ID
+USR_EMAIL
+USR_FIRST_NAME
+USR_MIDDLE_NAME
+USR_LAST_NAME
+USR_ORG_ID
+USR_ORG_ROLE
+USR_INIT_DT
+USR_STATUS
+USR_STATUS_DT
+
+
+CREATE TABLE `tbl_users` (
+  `USR_ID` int NOT NULL AUTO_INCREMENT,
+  `USR_EMAIL` varchar(100) NOT NULL,
+  `USR_FIRST_NAME` varchar(100) NOT NULL,
+  `USR_MIDDLE_NAME` varchar(100) NOT NULL,
+  `USR_LAST_NAME` varchar(100) NOT NULL,
+  `USR_ORG_ID` varchar(30) NOT NULL,
+  `USR_ORG_ROLE` varchar(20) NOT NULL,
+  PRIMARY KEY (`USR_ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+
+CREATE TABLE `tbl_org` (
+  `ORG_ID` int NOT NULL AUTO_INCREMENT,
+  `ORG_ALIAS_PREFIX` varchar(10) NOT NULL,
+  `ORG_NAME` varchar(100) NOT NULL,
+  `ORG_ADDRESS` varchar(100) NOT NULL,
+  PRIMARY KEY (`ORG_ID`)
+);
+
+CREATE TABLE `tbl_orgordnum` (
+  `ORG_ID` int NOT NULL,
+  `ORG_MAX_NUM integer NOT NULL,
+  `ORG_ORD_ID VARCHAR(20) NOT NULL
+  PRIMARY KEY (`ORG_ID`)
+);
+
+
+CREATE TABLE `tbl_vlog` (
+  `VLG_ID` varchar(20) NOT NULL,
+  `VLG_ORD_ID` varchar(20) NOT NULL,
+  `VLG_USR_ID` int NOT NULL,
+  `VLG_DESC` varchar(100) NOT NULL,
+  `VLG_DATE` varchar(100) NOT NULL,
+  `VLG_TIME` varchar(100) NOT NULL,
+  PRIMARY KEY (`VLG_ID`)
+);
+
+
+
+
+
+
+***** ORDER ******
+
+CREATE TABLE `tbl_orders` (
+  `ORD_ID` varchar(20) NOT NULL,
+  `ORD_NUM` varchar(30) NOT NULL,
+  `ORD_USR_ID` int NOT NULL,
+  `ORD_CLIENTREF` varchar(50) NOT NULL,
+  `ORD_HOUSE_NUM` varchar(20) NOT NULL,
+  `ORD_STREET1` varchar(100) NOT NULL,
+  `ORD_STREET2` varchar(100) NOT NULL,
+  `ORD_CITY` varchar(50) NOT NULL,
+  `ORD_PROV` varchar(2) NOT NULL,
+  `ORD_POSTAL` varchar(6) NOT NULL,
+  `ORD_LOANTYPE` int NOT NULL,
+  `ORD_PROPVALUE` varchar(20) NOT NULL,
+  `ORD_RPTRQST_DT` varchar(10) NOT NULL,
+  `ORD_ANTCLOS_DT` varchar(10) NOT NULL,
+  `ORD_APPOINTMENT_DTTIME` varchar(12) NOT NULL,  
+  `ORD_STATUS` int NOT NULL,
+  PRIMARY KEY (`ORD_ID`)
+)
+
+CREATE TABLE `tbl_appointments` (
+  `APPT_ID` varchar(20) NOT NULL,
+  `APPT_ORD_ID` varchar(20) NOT NULL,
+  `APPT_CANDIDATE_NAME` varchar(100) NOT NULL,
+  `APPT_DTTIME` varchar(12) NOT NULL,  
+  `APPT_DURATION` FLOAT(3,2) NOT NULL,  
+  PRIMARY KEY (`APPT_ID`)
+)
+
+
+
+INSERT INTO tbl_orders values (
+'20220422103012123456','RBC1-1','123456',1,'1000000','2022-04-25','2022-04-30',0);
+INSERT INTO tbl_orders values (
+'20220422123013987654','RBC1-2','654321',2,'2000000','2022-04-26','2022-04-29',0);
+INSERT INTO tbl_orders values (
+'20220422013013987783','TD1-1','453765',1,'1500000','2022-04-28','2022-05-03',0);
+INSERT INTO tbl_orders values (
+'20220422022513985143','TD2-1','365425',1,'980000','2022-04-27','2022-05-30',0);
+
+
+CREATE TABLE `tbl_orderproperty` (
+  `PRP_ORD_ID` varchar(20) NOT NULL,
+  `PRP_HOUSE_NUM` varchar(20) NOT NULL,
+  `PRP_STREET1` varchar(100) NOT NULL,
+  `PRP_STREET2` varchar(100) NOT NULL,
+  `PRP_CITY` varchar(50) NOT NULL,
+  `PRP_PROV` varchar(2) NOT NULL,
+  `PRP_POSTAL` varchar(6) NOT NULL
+  PRIMARY KEY (`PRP_ORD_ID`),
+)
+
+INSERT INTO tbl_property values (
+'20220422103012123456','1743','WESTBRIDGE WAY','','MISSISSAUGA','ON','L5N7S6');
+
+INSERT INTO tbl_property values (
+'20220422103012121234','5055','SATELLITE DR','','MISSISSAUGA','ON','L4W5K7');
+
+
+CREATE TABLE `tbl_orderreports` (
+  `RPT_ORD_ID` varchar(20) NOT NULL,
+  `RPT_REPORT_TYPE` varchar(50) NOT NULL
+);
+
+CREATE TABLE `tbl_orderborrower` (
+  `BRW_ORD_ID` varchar(20) NOT NULL,
+  `BRW_FIRST_NAME` varchar(50) NOT NULL,
+  `BRW_LAST_NAME` varchar(50) NOT NULL
+);
+
+CREATE TABLE `tbl_ordercontact` (
+  `CNT_ORD_ID` varchar(20) NOT NULL,
+  `CNT_FIRST_NAME` varchar(50) NOT NULL,
+  `CNT_LAST_NAME` varchar(50) NOT NULL,
+  `CNT_TYPE` varchar(30) NOT NULL,
+  `CNT_VAL` varchar(50) NOT NULL
+);
+
+CREATE TABLE `tbl_orderfiles` (
+  `FIL_ID` varchar(20) NOT NULL,
+  `FIL_ORD_ID` varchar(20) NOT NULL,
+  `FIL_FILE_NAME` varchar(100) NOT NULL,
+  PRIMARY KEY (`FIL_ID`)
+);
+
+
+
+
+DELETE FROM tbl_ordercontact;
+DELETE FROM tbl_orderborrower;
+DELETE FROM tbl_orderreports;
+DELETE FROM tbl_orderproperty;
+DELETE FROM tbl_orders;
+DELETE FROM tbl_orderfiles;
+DELETE FROM tbl_vlog;
+
+
+
+
+
+REPORT TYPE: 
+Full Appraisal - Asif Complete
+Hybrid Appraisal
+Desktop Appraisal
+
+
+
+Property Information:
+
+Est. Property Value:
+
+Report Requested Date:
+
+Anticipated Closing Date:
+
+Borrower First Name:
+Borrower  Last Name:
+
+
+Contact First Name:
+Contact Last Name:
+
+Number:
+Email:
+Type:
+Relation:
+
+

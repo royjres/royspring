@@ -1,0 +1,11 @@
+com/jrs/appraisal/connect/dto/OrderDto.class
+com/jrs/appraisal/connect/repository/OrderRepository.class
+com/jrs/appraisal/connect/service/OrderService.class
+com/jrs/appraisal/connect/controller/OrderController.class
+com/jrs/appraisal/connect/service/OrderServiceImpl.class
+com/jrs/appraisal/connect/model/Borrower.class
+com/jrs/appraisal/connect/model/Contact.class
+com/jrs/appraisal/connect/model/ContactId.class
+com/jrs/appraisal/connect/model/BorrowerId.class
+com/jrs/appraisal/connect/model/Order.class
+com/jrs/appraisal/connect/AppraisalConnectApplication.class
