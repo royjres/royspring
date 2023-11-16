@@ -43,5 +43,8 @@ public class User {
     @Column(name="USER_CATEGORY")
     private String userCategory;
 
+    @Column(name="USER_TIMEZONE")
+    private String userTimezone;
+
 
 }

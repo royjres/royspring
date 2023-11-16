@@ -44,7 +44,7 @@ public class OrderController {
     }
 
     @GetMapping("/byId/{id}")
-    public Order getOrder(@PathVariable String id){
+    public Order getOrder(@PathVariable String id) {
         log.info("get order by id ");
         return orderService.getOrderById(id);
     }

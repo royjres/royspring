@@ -64,15 +64,11 @@ public class Order {
     @JsonManagedReference(value = "order")
     private List<Reports> newfile_reports;
 
-    @OneToOne(cascade = CascadeType.PERSIST, mappedBy="order")
-    @JsonManagedReference(value = "order")
-    private Vlog newfile_vlog = new Vlog();
-
 
     public Order() {
     }
 
-    public Order(String ordId, String newfile_filenum, String newfile_username, String newfile_organization, String newfile_report_type, String newfile_client_loan_ref, String newfile_loan_type, String newfile_postalcode, String newfile_city, String newfile_streetno, String newfile_streetname, String newfile_suiteapt, String newfile_prov, String newfile_address, String newfile_estimated_prop_value, String newfile_report_request_date, String newfile_anticipated_closing_date, String newfile_special_instructions, String newfile_status, String newfile_appointment_datetime, String newfile_appraiser, String newfile_reviewer, String newfile_inspection_complete, String newfile_report_submitted, String newfile_fileclosed, List<Borrower> newfile_borrower, List<Contact> newfile_contact, List<OrderFiles> newfile_fileupload, List<Reports> newfile_reports, Vlog newfile_vlog) {
+    public Order(String ordId, String newfile_filenum, String newfile_username, String newfile_organization, String newfile_report_type, String newfile_client_loan_ref, String newfile_loan_type, String newfile_postalcode, String newfile_city, String newfile_streetno, String newfile_streetname, String newfile_suiteapt, String newfile_prov, String newfile_address, String newfile_estimated_prop_value, String newfile_report_request_date, String newfile_anticipated_closing_date, String newfile_special_instructions, String newfile_status, String newfile_appointment_datetime, String newfile_appraiser, String newfile_reviewer, String newfile_inspection_complete, String newfile_report_submitted, String newfile_fileclosed, List<Borrower> newfile_borrower, List<Contact> newfile_contact, List<OrderFiles> newfile_fileupload, List<Reports> newfile_reports) {
         this.ordId = ordId;
         this.newfile_filenum = newfile_filenum;
         this.newfile_username = newfile_username;
@@ -102,6 +98,5 @@ public class Order {
         this.newfile_contact = newfile_contact;
         this.newfile_fileupload = newfile_fileupload;
         this.newfile_reports = newfile_reports;
-        this.newfile_vlog = newfile_vlog;
     }
 }

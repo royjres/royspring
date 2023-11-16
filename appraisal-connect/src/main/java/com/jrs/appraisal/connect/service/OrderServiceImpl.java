@@ -6,6 +6,7 @@ import com.jrs.appraisal.connect.model.Contact;
 import com.jrs.appraisal.connect.model.Order;
 import com.jrs.appraisal.connect.model.Vlog;
 import com.jrs.appraisal.connect.repository.OrderRepository;
+import com.jrs.appraisal.connect.repository.VlogRepository;
 import com.jrs.appraisal.connect.util.myutils;
 import jakarta.transaction.Transactional;
 import lombok.extern.slf4j.Slf4j;
@@ -26,6 +27,9 @@ public class OrderServiceImpl implements OrderService {
 
     @Autowired
     OrderRepository orderRepository;
+
+    @Autowired
+    VlogRepository vlogRepository;
 
     @Autowired
     myutils _utils;
@@ -61,20 +65,21 @@ public class OrderServiceImpl implements OrderService {
 
             //String myTime = myOrderId.substring(11,18);
             order.setNewfile_filenum(myFileNum);
+
+            orderRepository.save(order);
+
             Vlog myvlog = new Vlog();
-            myvlog.setVlogOrdId(order.getOrdId());
+            myvlog.setVlogFileId(order.getOrdId());
             //String myDate = myOrderId.substring(0,9).replace(".","-");
             myvlog.setVlogDescription("FILE OPENED");
             myvlog.setVlogUser("Roy Noronha");
             myvlog.setVlogDate("myDate");
             myvlog.setVlogTime("myTime");
             myvlog.setVlogUserLevel("2");
-            order.setNewfile_vlog(myvlog);
-            myvlog.setOrder(order);
 
 
+            vlogRepository.save(myvlog);
 
-            orderRepository.save(order);
             }catch (Exception e){
                 e.printStackTrace();
         }

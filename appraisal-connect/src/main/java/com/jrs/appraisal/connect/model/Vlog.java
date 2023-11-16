@@ -19,8 +19,12 @@ public class Vlog {
             name = "UUID",
             strategy = "org.hibernate.id.UUIDGenerator"
     )
+
     @Column(name="VLOG_ORD_ID")
     private String vlogOrdId;
+
+    @Column(name="VLOG_FILE_ID")
+    private String vlogFileId;
 
     @Column(name="VLOG_DATE")
     private String vlogDate;
@@ -36,10 +40,5 @@ public class Vlog {
 
     @Column(name="VLOG_DESCRIPTION")
     private String vlogDescription;
-
-    @ManyToOne
-    @JoinColumn(name="order_id", nullable=false)
-    @JsonBackReference(value = "order")
-    private Order order;
 
 }
