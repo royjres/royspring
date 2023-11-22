@@ -4,6 +4,7 @@ import com.jrs.appraisal.connect.model.Order;
 import com.jrs.appraisal.connect.model.Vlog;
 import com.jrs.appraisal.connect.repository.OrderRepository;
 import com.jrs.appraisal.connect.repository.VlogRepository;
+import com.jrs.appraisal.connect.util.myutils;
 import jakarta.transaction.Transactional;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +21,7 @@ public class FileupdateServiceImpl implements FileupdateService {
     @Autowired
     VlogRepository vlogRepository;
 
+
     @Override
     public void updateAppraiser(Order order) {
 
@@ -29,7 +31,7 @@ public class FileupdateServiceImpl implements FileupdateService {
             Vlog myvlog = new Vlog();
             myvlog.setVlogOrdId(order.getOrdId());
             //String myDate = myOrderId.substring(0,9).replace(".","-");
-            myvlog.setVlogDescription("APPRAISER ASSIGNED");
+            myvlog.setVlogDescription( "Appraiser Assigned: " + order.getNewfile_appraiser());
             myvlog.setVlogUser("Roy Noronha");
             myvlog.setVlogDate("myDate");
             myvlog.setVlogTime("myTime");

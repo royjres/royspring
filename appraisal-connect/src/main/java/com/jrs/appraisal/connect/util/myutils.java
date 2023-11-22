@@ -81,4 +81,37 @@ public class myutils {
         String reverse_timestamp = sb.reverse().toString();
         return reverse_timestamp;
     }
+
+    public String get_FileStatus(String myStatus) {
+
+        String returnStatus = "";
+
+        switch(myStatus) {
+            case "File Open":
+                returnStatus = "0";
+                break;
+            case "Appraiser Assigned":
+                returnStatus = "1";
+                break;
+            case "Insp. Date Confirmed":
+                returnStatus = "2";
+                break;
+            case "Insp. Completed":
+                returnStatus = "3";
+                break;
+            case "Pending Review":
+                returnStatus = "4";
+                break;
+            case "Report Rejected":
+                returnStatus = "5";
+                break;
+            case "File Closed":
+                returnStatus = "10";
+                break;
+        }
+
+
+        return returnStatus;
+    }
+
 }

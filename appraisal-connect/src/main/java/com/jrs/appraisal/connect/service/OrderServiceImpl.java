@@ -51,7 +51,7 @@ public class OrderServiceImpl implements OrderService {
             }
             if(!order.getNewfile_fileupload().isEmpty()){
                 order.getNewfile_fileupload().forEach(orderFile -> {
-                    orderFile.setUploadtime(new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new java.util.Date()));
+                    orderFile.setUploadtime(new SimpleDateFormat("yyyyMMddHHmmss").format(new java.util.Date()));
                     orderFile.setOrder(order);
                 });
             }
@@ -63,22 +63,12 @@ public class OrderServiceImpl implements OrderService {
 
             String myFileNum = _utils.get_FileNum(order.getNewfile_organization());
 
-            //String myTime = myOrderId.substring(11,18);
             order.setNewfile_filenum(myFileNum);
+            order.setNewfile_status("0");
 
-            orderRepository.save(order);
+            Order savedOrderEntity = orderRepository.save(order);
 
-            Vlog myvlog = new Vlog();
-            myvlog.setVlogFileId(order.getOrdId());
-            //String myDate = myOrderId.substring(0,9).replace(".","-");
-            myvlog.setVlogDescription("FILE OPENED");
-            myvlog.setVlogUser("Roy Noronha");
-            myvlog.setVlogDate("myDate");
-            myvlog.setVlogTime("myTime");
-            myvlog.setVlogUserLevel("2");
-
-
-            vlogRepository.save(myvlog);
+            createOrderVlog(savedOrderEntity);
 
             }catch (Exception e){
                 e.printStackTrace();
@@ -100,5 +90,23 @@ public class OrderServiceImpl implements OrderService {
             e.printStackTrace();
         }
         return order;
+    }
+
+    public void createOrderVlog(Order order) {
+
+        log.info("Saving vlog....");
+        Vlog myvlog = new Vlog();
+        myvlog.setVlogFileId(order.getOrdId());
+        String myDate = order.getOrdId().substring(0,8);
+        String myTime = order.getOrdId().substring(8,14);
+        myvlog.setVlogDescription("FILE OPENED");
+        myvlog.setVlogUser("Roy Noronha");
+        myvlog.setVlogDate(myDate);
+        myvlog.setVlogTime(myTime);
+        myvlog.setVlogUserLevel("2");
+        log.info(myvlog.toString());
+
+        vlogRepository.save(myvlog);
+
     }
 }
