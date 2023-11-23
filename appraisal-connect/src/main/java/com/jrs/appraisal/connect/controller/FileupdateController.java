@@ -33,17 +33,27 @@ public class FileupdateController {
     @PostMapping("/byId")
     public void updateFileInfo(@RequestBody Fileupdate myFileUpdate) {
     //public void updateFileInfo(@PathVariable String id, @RequestBody Fileupdate myFileUpdate) {
-        Order order = null;
-        log.info(myFileUpdate.getFileAppraiser());
-        order = this.orderService.getOrderById(myFileUpdate.getFileId());
-
-        order.setNewfile_appraiser(myFileUpdate.getFileAppraiser());
-        order.setNewfile_status(_utils.get_FileStatus("Appraiser Assigned"));
-
-        log.info(order.getNewfile_appraiser());
 
 
-        this.fileupdateService.updateAppraiser(order);
+        switch(myFileUpdate.getFileAction()) {
+            case "assignappraiser":
+                this.fileupdateService.updateAppraiser(myFileUpdate);
+                break;
+            case "appointmentupdate":
+                this.fileupdateService.updateAppointmentNotification(myFileUpdate);
+                break;
+            case "appointmentexception":
+                this.fileupdateService.updateAppointmentException(myFileUpdate);
+                break;
+            case "appointmentdate":
+                this.fileupdateService.updateAppointmentDate(myFileUpdate);
+                break;
+            case "inspectioncomplete":
+                this.fileupdateService.updateInspectionComplete(myFileUpdate);
+                break;
+        }
+
+
     }
 
 

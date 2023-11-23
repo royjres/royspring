@@ -96,9 +96,15 @@ public class OrderServiceImpl implements OrderService {
 
         log.info("Saving vlog....");
         Vlog myvlog = new Vlog();
-        myvlog.setVlogFileId(order.getOrdId());
-        String myDate = order.getOrdId().substring(0,8);
-        String myTime = order.getOrdId().substring(8,14);
+        String mystr = order.getOrdId();
+
+        myvlog.setVlogFileId(mystr);
+
+        StringBuilder mystr_rev = new StringBuilder(mystr);
+        mystr = mystr_rev.reverse().toString();
+
+        String myDate = mystr.substring(0,8);
+        String myTime = mystr.substring(8,14);
         myvlog.setVlogDescription("FILE OPENED");
         myvlog.setVlogUser("Roy Noronha");
         myvlog.setVlogDate(myDate);

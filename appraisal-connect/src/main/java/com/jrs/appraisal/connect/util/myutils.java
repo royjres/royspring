@@ -2,6 +2,7 @@ package com.jrs.appraisal.connect.util;
 
 import org.springframework.stereotype.Service;
 import java.sql.Timestamp;
+import java.time.Instant;
 
 @Service
 public class myutils {
@@ -38,7 +39,7 @@ public class myutils {
     }
 
 
-    public String get_reverse_timestamp() {
+    public String get_old_reverse_timestamp() {
 
         Timestamp timestamp = new Timestamp(System.currentTimeMillis());
         String mytimestamp = timestamp.toString();
@@ -81,6 +82,39 @@ public class myutils {
         String reverse_timestamp = sb.reverse().toString();
         return reverse_timestamp;
     }
+
+
+
+    public String get_reverse_timestamp() {
+
+        Instant instant = Instant.now();
+        String mystr = instant.toString().replace("-","");
+        mystr = mystr.replace("T","");
+        mystr = mystr.replace(":","");
+        mystr = mystr.replace(".","");
+        mystr = mystr.replace("Z","");
+        mystr = mystr.substring(0,mystr.length()-2);
+        StringBuilder mystr_rev = new StringBuilder(mystr);
+        mystr = mystr_rev.reverse().toString();
+
+        return mystr;
+    }
+
+
+    public String get_timestamp() {
+
+        Instant instant = Instant.now();
+        String mystr = instant.toString().replace("-","");
+        mystr = mystr.replace("T","");
+        mystr = mystr.replace(":","");
+        mystr = mystr.replace(".","");
+        mystr = mystr.replace("Z","");
+        mystr = mystr.substring(0,mystr.length()-2);
+
+        return mystr;
+    }
+
+
 
     public String get_FileStatus(String myStatus) {
 

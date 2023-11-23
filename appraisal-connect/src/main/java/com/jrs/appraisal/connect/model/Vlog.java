@@ -18,7 +18,7 @@ public class Vlog {
     @GenericGenerator(
             name = "UUID",
             strategy = "org.hibernate.id.UUIDGenerator"
-    )
+     )
 
     @Column(name="VLOG_ORD_ID")
     private String vlogOrdId;

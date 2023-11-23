@@ -14,4 +14,6 @@ public class Fileupdate {
 
     private String fileAppointment;
 
+    private String fileAppointmentUpdate;
+
 }
