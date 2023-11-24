@@ -18,5 +18,11 @@ public interface FileupdateService {
 
     public void updateInspectionComplete(Fileupdate myFileUpdate);
 
+    public void updateReportSubmitted(Fileupdate myFileUpdate);
+
+    public void updateReportRejected(Fileupdate myFileUpdate);
+
+    public void updateFileClosed(Fileupdate myFileUpdate);
+
 
 }

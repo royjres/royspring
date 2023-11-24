@@ -12,6 +12,8 @@ public class Fileupdate {
 
     private String fileAppraiser;
 
+    private String fileReviewer;
+
     private String fileAppointment;
 
     private String fileAppointmentUpdate;

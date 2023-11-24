@@ -51,6 +51,15 @@ public class FileupdateController {
             case "inspectioncomplete":
                 this.fileupdateService.updateInspectionComplete(myFileUpdate);
                 break;
+            case "reportsubmitted":
+                this.fileupdateService.updateReportSubmitted(myFileUpdate);
+                break;
+            case "reportrejected":
+                this.fileupdateService.updateReportRejected(myFileUpdate);
+                break;
+            case "fileclosed":
+                this.fileupdateService.updateFileClosed(myFileUpdate);
+                break;
         }
 
 

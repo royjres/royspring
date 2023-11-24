@@ -29,24 +29,38 @@ public class FileupdateServiceImpl implements FileupdateService {
     @Override
     public void updateAppraiser(Fileupdate myFileUpdate) {
 
+        //UPDATE ORDER
+        Order order = null;
+        String myAppraiser = "";
+        String myReviewer = "";
+
+        String myTimestamp = _utils.get_timestamp();
+        String myDate = myTimestamp.substring(0,8);
+        String myTime = myTimestamp.substring(8,14);
+
+
         try {
-            //UPDATE ORDER
-            Order order = null;
+
+            myAppraiser = myFileUpdate.getFileAppraiser();
+            myReviewer = myFileUpdate.getFileReviewer();
 
             order = orderRepository.findById(myFileUpdate.getFileId()).get();
-            order.setNewfile_appraiser(myFileUpdate.getFileAppraiser());
+            order.setNewfile_appraiser(myAppraiser);
+            if ( myReviewer != "" ) {
+                if ( myReviewer == null ) {
+                    myReviewer = "";
+                }
+                order.setNewfile_reviewer(myReviewer);
+            }
             order.setNewfile_status(_utils.get_FileStatus("Appraiser Assigned"));
 
             order = orderRepository.save(order);
 
             //CREATE VLOG
-            String myTimestamp = _utils.get_timestamp();
-            String myDate = myTimestamp.substring(0,8);
-            String myTime = myTimestamp.substring(8,14);
 
             Vlog myvlog = new Vlog();
             //myvlog.setVlogOrdId(order.getOrdId());
-            myvlog.setVlogDescription( ("Appraiser Assigned: " + order.getNewfile_appraiser()).toUpperCase());
+            myvlog.setVlogDescription( ("Appraiser Assigned: " + myAppraiser).toUpperCase());
             myvlog.setVlogUser("Roy Noronha");
             myvlog.setVlogDate(myDate);
             myvlog.setVlogTime(myTime);
@@ -54,9 +68,33 @@ public class FileupdateServiceImpl implements FileupdateService {
             myvlog.setVlogFileId(myFileUpdate.getFileId());
             vlogRepository.save(myvlog);
 
+
         } catch (Exception e){
             e.printStackTrace();
         }
+
+        try {
+            if ( myReviewer != "") {
+                order.setNewfile_reviewer(myReviewer);
+            }
+
+            //CREATE VLOG
+
+            Vlog myvlog = new Vlog();
+            //myvlog.setVlogOrdId(order.getOrdId());
+            myvlog.setVlogDescription( ("Reviewer Assigned: " + myReviewer).toUpperCase());
+            myvlog.setVlogUser("Roy Noronha");
+            myvlog.setVlogDate(myDate);
+            myvlog.setVlogTime(myTime);
+            myvlog.setVlogUserLevel("2");
+            myvlog.setVlogFileId(myFileUpdate.getFileId());
+            vlogRepository.save(myvlog);
+
+
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+
 
 
     }
@@ -175,6 +213,116 @@ public class FileupdateServiceImpl implements FileupdateService {
             Vlog myvlog = new Vlog();
             //myvlog.setVlogOrdId(order.getOrdId());
             myvlog.setVlogDescription( ("Insp. Completed").toUpperCase());
+            myvlog.setVlogUser("Roy Noronha");
+            myvlog.setVlogDate(myDate);
+            myvlog.setVlogTime(myTime);
+            myvlog.setVlogUserLevel("2");
+            myvlog.setVlogFileId(myFileUpdate.getFileId());
+            vlogRepository.save(myvlog);
+
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+
+
+    }
+
+    @Override
+    public void updateReportSubmitted(Fileupdate myFileUpdate) {
+
+        try {
+
+            String myTimestamp = _utils.get_timestamp();
+            String myDate = myTimestamp.substring(0,8);
+            String myTime = myTimestamp.substring(8,14);
+
+            //UPDATE ORDER
+            Order order = null;
+
+            order = orderRepository.findById(myFileUpdate.getFileId()).get();
+            order.setNewfile_report_submitted(myDate + myTime);
+            order.setNewfile_status(_utils.get_FileStatus("Pending Review"));
+
+            order = orderRepository.save(order);
+
+            //CREATE VLOG
+
+            Vlog myvlog = new Vlog();
+            //myvlog.setVlogOrdId(order.getOrdId());
+            myvlog.setVlogDescription( ("Report Submitted - Pending Review").toUpperCase());
+            myvlog.setVlogUser("Roy Noronha");
+            myvlog.setVlogDate(myDate);
+            myvlog.setVlogTime(myTime);
+            myvlog.setVlogUserLevel("2");
+            myvlog.setVlogFileId(myFileUpdate.getFileId());
+            vlogRepository.save(myvlog);
+
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+
+    }
+
+    @Override
+    public void updateReportRejected(Fileupdate myFileUpdate) {
+
+        try {
+
+            String myTimestamp = _utils.get_timestamp();
+            String myDate = myTimestamp.substring(0,8);
+            String myTime = myTimestamp.substring(8,14);
+
+            //UPDATE ORDER
+            Order order = null;
+
+            order = orderRepository.findById(myFileUpdate.getFileId()).get();
+            order.setNewfile_inspection_complete(myDate + myTime);
+            order.setNewfile_status(_utils.get_FileStatus("Report Rejected"));
+
+            order = orderRepository.save(order);
+
+            //CREATE VLOG
+
+            Vlog myvlog = new Vlog();
+            //myvlog.setVlogOrdId(order.getOrdId());
+            myvlog.setVlogDescription( ("Report Rejected").toUpperCase());
+            myvlog.setVlogUser("Roy Noronha");
+            myvlog.setVlogDate(myDate);
+            myvlog.setVlogTime(myTime);
+            myvlog.setVlogUserLevel("2");
+            myvlog.setVlogFileId(myFileUpdate.getFileId());
+            vlogRepository.save(myvlog);
+
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+
+
+    }
+
+    @Override
+    public void updateFileClosed(Fileupdate myFileUpdate) {
+
+        try {
+
+            String myTimestamp = _utils.get_timestamp();
+            String myDate = myTimestamp.substring(0,8);
+            String myTime = myTimestamp.substring(8,14);
+
+            //UPDATE ORDER
+            Order order = null;
+
+            order = orderRepository.findById(myFileUpdate.getFileId()).get();
+            order.setNewfile_fileclosed(myDate + myTime);
+            order.setNewfile_status(_utils.get_FileStatus("File Closed"));
+
+            order = orderRepository.save(order);
+
+            //CREATE VLOG
+
+            Vlog myvlog = new Vlog();
+            //myvlog.setVlogOrdId(order.getOrdId());
+            myvlog.setVlogDescription( ("File Closed").toUpperCase());
             myvlog.setVlogUser("Roy Noronha");
             myvlog.setVlogDate(myDate);
             myvlog.setVlogTime(myTime);
