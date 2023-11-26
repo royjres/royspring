@@ -1,10 +1,13 @@
 package com.jrs.appraisal.connect.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.GenericGenerator;
+
+import java.util.List;
 
 @Setter
 @Getter
@@ -40,5 +43,10 @@ public class Vlog {
 
     @Column(name="VLOG_DESCRIPTION")
     private String vlogDescription;
+
+    @ManyToOne
+    @JoinColumn(name="userId", nullable=true)
+  /// @JsonBackReference(value = "user")
+    User user;
 
 }

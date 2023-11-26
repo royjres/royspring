@@ -32,7 +32,7 @@ public class MessageController {
 
     @GetMapping("/byId/{id}")
     public List<Message> getVlogs(@PathVariable String id) {
-        log.info("retrieve vlogs");
+        log.info("retrieve messages");
         return messageService.getMessagesById(id);
     }
 

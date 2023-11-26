@@ -1,6 +1,7 @@
 package com.jrs.appraisal.connect.controller;
 
 import com.jrs.appraisal.connect.model.User;
+import com.jrs.appraisal.connect.model.Usercreed;
 import com.jrs.appraisal.connect.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -40,4 +41,12 @@ public class UserController {
         log.info("get user by id ");
         return userService.getUserById(id);
     }
+
+    @GetMapping("/byAlias/{user}")
+    public User checkUserAuthentication(@PathVariable String user) {
+        log.info("check user authentication" + user);
+        return userService.getAuthenticatedUser(user);
+    }
+
+
 }

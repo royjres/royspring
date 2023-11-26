@@ -1,11 +1,15 @@
 package com.jrs.appraisal.connect.model;
 
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.Entity;
 import lombok.Getter;
 import lombok.Setter;
 import jakarta.persistence.*;
 import org.hibernate.annotations.GenericGenerator;
+
+import java.util.List;
 
 @Setter
 @Getter
@@ -46,5 +50,8 @@ public class User {
     @Column(name="USER_TIMEZONE")
     private String userTimezone;
 
+    //@OneToMany(cascade = CascadeType.PERSIST, mappedBy="user")
+   // @JsonManagedReference(value = "user")
+   // private List<Vlog> vlogs;
 
 }

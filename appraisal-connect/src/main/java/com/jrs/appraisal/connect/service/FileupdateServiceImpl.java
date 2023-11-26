@@ -4,6 +4,7 @@ import com.jrs.appraisal.connect.model.Fileupdate;
 import com.jrs.appraisal.connect.model.Order;
 import com.jrs.appraisal.connect.model.Vlog;
 import com.jrs.appraisal.connect.repository.OrderRepository;
+import com.jrs.appraisal.connect.repository.UserRepository;
 import com.jrs.appraisal.connect.repository.VlogRepository;
 import com.jrs.appraisal.connect.util.myutils;
 import jakarta.transaction.Transactional;
@@ -20,7 +21,8 @@ public class FileupdateServiceImpl implements FileupdateService {
     OrderRepository orderRepository;
 
     @Autowired
-    VlogRepository vlogRepository;
+    VlogService vlogService;
+
 
     @Autowired
     myutils _utils;
@@ -37,7 +39,7 @@ public class FileupdateServiceImpl implements FileupdateService {
         String myTimestamp = _utils.get_timestamp();
         String myDate = myTimestamp.substring(0,8);
         String myTime = myTimestamp.substring(8,14);
-
+        String myUserId = myFileUpdate.getUserId();
 
         try {
 
@@ -61,12 +63,12 @@ public class FileupdateServiceImpl implements FileupdateService {
             Vlog myvlog = new Vlog();
             //myvlog.setVlogOrdId(order.getOrdId());
             myvlog.setVlogDescription( ("Appraiser Assigned: " + myAppraiser).toUpperCase());
-            myvlog.setVlogUser("Roy Noronha");
+            myvlog.setVlogUser(myUserId);
             myvlog.setVlogDate(myDate);
             myvlog.setVlogTime(myTime);
             myvlog.setVlogUserLevel("2");
             myvlog.setVlogFileId(myFileUpdate.getFileId());
-            vlogRepository.save(myvlog);
+            vlogService.createVlog(myvlog);
 
 
         } catch (Exception e){
@@ -76,19 +78,21 @@ public class FileupdateServiceImpl implements FileupdateService {
         try {
             if ( myReviewer != "") {
                 order.setNewfile_reviewer(myReviewer);
+
+                //CREATE VLOG
+
+                Vlog myvlog = new Vlog();
+                //myvlog.setVlogOrdId(order.getOrdId());
+                myvlog.setVlogDescription( ("Reviewer Assigned: " + myReviewer).toUpperCase());
+                myvlog.setVlogUser(myUserId);
+                myvlog.setVlogDate(myDate);
+                myvlog.setVlogTime(myTime);
+                myvlog.setVlogUserLevel("2");
+                myvlog.setVlogFileId(myFileUpdate.getFileId());
+                vlogService.createVlog(myvlog);
+
             }
 
-            //CREATE VLOG
-
-            Vlog myvlog = new Vlog();
-            //myvlog.setVlogOrdId(order.getOrdId());
-            myvlog.setVlogDescription( ("Reviewer Assigned: " + myReviewer).toUpperCase());
-            myvlog.setVlogUser("Roy Noronha");
-            myvlog.setVlogDate(myDate);
-            myvlog.setVlogTime(myTime);
-            myvlog.setVlogUserLevel("2");
-            myvlog.setVlogFileId(myFileUpdate.getFileId());
-            vlogRepository.save(myvlog);
 
 
         } catch (Exception e){
@@ -108,16 +112,18 @@ public class FileupdateServiceImpl implements FileupdateService {
             String myTimestamp = _utils.get_timestamp();
             String myDate = myTimestamp.substring(0,8);
             String myTime = myTimestamp.substring(8,14);
+            String myUserId = myFileUpdate.getUserId();
+
 
             Vlog myvlog = new Vlog();
             //myvlog.setVlogOrdId(order.getOrdId());
             myvlog.setVlogDescription( (myFileUpdate.getFileAppointmentUpdate()).toUpperCase());
-            myvlog.setVlogUser("Roy Noronha");
+            myvlog.setVlogUser(myUserId);
             myvlog.setVlogDate(myDate);
             myvlog.setVlogTime(myTime);
             myvlog.setVlogUserLevel("2");
             myvlog.setVlogFileId(myFileUpdate.getFileId());
-            vlogRepository.save(myvlog);
+            vlogService.createVlog(myvlog);
 
         } catch (Exception e){
             e.printStackTrace();
@@ -136,16 +142,17 @@ public class FileupdateServiceImpl implements FileupdateService {
             String myTimestamp = _utils.get_timestamp();
             String myDate = myTimestamp.substring(0,8);
             String myTime = myTimestamp.substring(8,14);
+            String myUserId = myFileUpdate.getUserId();
 
             Vlog myvlog = new Vlog();
             //myvlog.setVlogOrdId(order.getOrdId());
             myvlog.setVlogDescription( (myFileUpdate.getFileAppointmentUpdate()).toUpperCase());
-            myvlog.setVlogUser("Roy Noronha");
+            myvlog.setVlogUser(myUserId);
             myvlog.setVlogDate(myDate);
             myvlog.setVlogTime(myTime);
             myvlog.setVlogUserLevel("2");
             myvlog.setVlogFileId(myFileUpdate.getFileId());
-            vlogRepository.save(myvlog);
+            vlogService.createVlog(myvlog);
 
         } catch (Exception e){
             e.printStackTrace();
@@ -173,16 +180,18 @@ public class FileupdateServiceImpl implements FileupdateService {
             String myTimestamp = _utils.get_timestamp();
             String myDate = myTimestamp.substring(0,8);
             String myTime = myTimestamp.substring(8,14);
+            String myUserId = myFileUpdate.getUserId();
+
 
             Vlog myvlog = new Vlog();
             //myvlog.setVlogOrdId(order.getOrdId());
             myvlog.setVlogDescription( ("Insp. Date Confirmed").toUpperCase());
-            myvlog.setVlogUser("Roy Noronha");
+            myvlog.setVlogUser(myUserId);
             myvlog.setVlogDate(myDate);
             myvlog.setVlogTime(myTime);
             myvlog.setVlogUserLevel("2");
             myvlog.setVlogFileId(myFileUpdate.getFileId());
-            vlogRepository.save(myvlog);
+            vlogService.createVlog(myvlog);
 
         } catch (Exception e){
             e.printStackTrace();
@@ -198,6 +207,8 @@ public class FileupdateServiceImpl implements FileupdateService {
             String myTimestamp = _utils.get_timestamp();
             String myDate = myTimestamp.substring(0,8);
             String myTime = myTimestamp.substring(8,14);
+            String myUserId = myFileUpdate.getUserId();
+
 
             //UPDATE ORDER
             Order order = null;
@@ -213,12 +224,12 @@ public class FileupdateServiceImpl implements FileupdateService {
             Vlog myvlog = new Vlog();
             //myvlog.setVlogOrdId(order.getOrdId());
             myvlog.setVlogDescription( ("Insp. Completed").toUpperCase());
-            myvlog.setVlogUser("Roy Noronha");
+            myvlog.setVlogUser(myUserId);
             myvlog.setVlogDate(myDate);
             myvlog.setVlogTime(myTime);
             myvlog.setVlogUserLevel("2");
             myvlog.setVlogFileId(myFileUpdate.getFileId());
-            vlogRepository.save(myvlog);
+            vlogService.createVlog(myvlog);
 
         } catch (Exception e){
             e.printStackTrace();
@@ -235,6 +246,8 @@ public class FileupdateServiceImpl implements FileupdateService {
             String myTimestamp = _utils.get_timestamp();
             String myDate = myTimestamp.substring(0,8);
             String myTime = myTimestamp.substring(8,14);
+            String myUserId = myFileUpdate.getUserId();
+
 
             //UPDATE ORDER
             Order order = null;
@@ -250,12 +263,12 @@ public class FileupdateServiceImpl implements FileupdateService {
             Vlog myvlog = new Vlog();
             //myvlog.setVlogOrdId(order.getOrdId());
             myvlog.setVlogDescription( ("Report Submitted - Pending Review").toUpperCase());
-            myvlog.setVlogUser("Roy Noronha");
+            myvlog.setVlogUser(myUserId);
             myvlog.setVlogDate(myDate);
             myvlog.setVlogTime(myTime);
             myvlog.setVlogUserLevel("2");
             myvlog.setVlogFileId(myFileUpdate.getFileId());
-            vlogRepository.save(myvlog);
+            vlogService.createVlog(myvlog);
 
         } catch (Exception e){
             e.printStackTrace();
@@ -271,6 +284,7 @@ public class FileupdateServiceImpl implements FileupdateService {
             String myTimestamp = _utils.get_timestamp();
             String myDate = myTimestamp.substring(0,8);
             String myTime = myTimestamp.substring(8,14);
+            String myUserId = myFileUpdate.getUserId();
 
             //UPDATE ORDER
             Order order = null;
@@ -286,12 +300,12 @@ public class FileupdateServiceImpl implements FileupdateService {
             Vlog myvlog = new Vlog();
             //myvlog.setVlogOrdId(order.getOrdId());
             myvlog.setVlogDescription( ("Report Rejected").toUpperCase());
-            myvlog.setVlogUser("Roy Noronha");
+            myvlog.setVlogUser(myUserId);
             myvlog.setVlogDate(myDate);
             myvlog.setVlogTime(myTime);
             myvlog.setVlogUserLevel("2");
             myvlog.setVlogFileId(myFileUpdate.getFileId());
-            vlogRepository.save(myvlog);
+            vlogService.createVlog(myvlog);
 
         } catch (Exception e){
             e.printStackTrace();
@@ -308,6 +322,8 @@ public class FileupdateServiceImpl implements FileupdateService {
             String myTimestamp = _utils.get_timestamp();
             String myDate = myTimestamp.substring(0,8);
             String myTime = myTimestamp.substring(8,14);
+            String myUserId = myFileUpdate.getUserId();
+
 
             //UPDATE ORDER
             Order order = null;
@@ -323,12 +339,12 @@ public class FileupdateServiceImpl implements FileupdateService {
             Vlog myvlog = new Vlog();
             //myvlog.setVlogOrdId(order.getOrdId());
             myvlog.setVlogDescription( ("File Closed").toUpperCase());
-            myvlog.setVlogUser("Roy Noronha");
+            myvlog.setVlogUser(myUserId);
             myvlog.setVlogDate(myDate);
             myvlog.setVlogTime(myTime);
             myvlog.setVlogUserLevel("2");
             myvlog.setVlogFileId(myFileUpdate.getFileId());
-            vlogRepository.save(myvlog);
+            vlogService.createVlog(myvlog);
 
         } catch (Exception e){
             e.printStackTrace();

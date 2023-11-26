@@ -33,7 +33,7 @@ public class Message {
     private String msgDateTime;
 
     @Column(name="MSG_USER")
-    private String msgUaer;
+    private String msgUser;
 
 
 }

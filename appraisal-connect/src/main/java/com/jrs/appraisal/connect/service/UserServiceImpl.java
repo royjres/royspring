@@ -1,6 +1,7 @@
 package com.jrs.appraisal.connect.service;
 
 import com.jrs.appraisal.connect.model.User;
+import com.jrs.appraisal.connect.model.Userlogged;
 import com.jrs.appraisal.connect.repository.UserRepository;
 import jakarta.transaction.Transactional;
 import lombok.extern.slf4j.Slf4j;
@@ -47,6 +48,20 @@ public class UserServiceImpl implements UserService {
             e.printStackTrace();
         }
         return user;
+    }
+
+    @Override
+    public User getAuthenticatedUser(String userName) {
+        User user = null;
+
+        try {
+            user = userRepository.findByUserName(userName);
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+
+        return user;
+
     }
 
 }

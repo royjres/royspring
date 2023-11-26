@@ -29,7 +29,7 @@ public class OrderServiceImpl implements OrderService {
     OrderRepository orderRepository;
 
     @Autowired
-    VlogRepository vlogRepository;
+    VlogService vlogService;
 
     @Autowired
     myutils _utils;
@@ -106,13 +106,13 @@ public class OrderServiceImpl implements OrderService {
         String myDate = mystr.substring(0,8);
         String myTime = mystr.substring(8,14);
         myvlog.setVlogDescription("FILE OPENED");
-        myvlog.setVlogUser("Roy Noronha");
+        myvlog.setVlogUser("25a941fa-5d2a-4835-b4eb-c7b65de8cb5b");
         myvlog.setVlogDate(myDate);
         myvlog.setVlogTime(myTime);
         myvlog.setVlogUserLevel("2");
         log.info(myvlog.toString());
 
-        vlogRepository.save(myvlog);
+        vlogService.createVlog(myvlog);
 
     }
 }
