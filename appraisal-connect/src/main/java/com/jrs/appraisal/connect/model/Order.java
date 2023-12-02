@@ -35,7 +35,7 @@ public class Order {
     private String newfile_streetname;
     private String newfile_suiteapt;
     private String newfile_prov;
-    private String newfile_address;
+//    private String newfile_address;
     private String newfile_estimated_prop_value;
     private String newfile_report_request_date;
     private String newfile_anticipated_closing_date;
@@ -68,7 +68,7 @@ public class Order {
     public Order() {
     }
 
-    public Order(String ordId, String newfile_filenum, String newfile_username, String newfile_organization, String newfile_report_type, String newfile_client_loan_ref, String newfile_loan_type, String newfile_postalcode, String newfile_city, String newfile_streetno, String newfile_streetname, String newfile_suiteapt, String newfile_prov, String newfile_address, String newfile_estimated_prop_value, String newfile_report_request_date, String newfile_anticipated_closing_date, String newfile_special_instructions, String newfile_status, String newfile_appointment_datetime, String newfile_appraiser, String newfile_reviewer, String newfile_inspection_complete, String newfile_report_submitted, String newfile_fileclosed, List<Borrower> newfile_borrower, List<Contact> newfile_contact, List<OrderFiles> newfile_fileupload, List<Reports> newfile_reports) {
+    public Order(String ordId, String newfile_filenum, String newfile_username, String newfile_organization, String newfile_report_type, String newfile_client_loan_ref, String newfile_loan_type, String newfile_postalcode, String newfile_city, String newfile_streetno, String newfile_streetname, String newfile_suiteapt, String newfile_prov, String newfile_estimated_prop_value, String newfile_report_request_date, String newfile_anticipated_closing_date, String newfile_special_instructions, String newfile_status, String newfile_appointment_datetime, String newfile_appraiser, String newfile_reviewer, String newfile_inspection_complete, String newfile_report_submitted, String newfile_fileclosed, List<Borrower> newfile_borrower, List<Contact> newfile_contact, List<OrderFiles> newfile_fileupload, List<Reports> newfile_reports) {
         this.ordId = ordId;
         this.newfile_filenum = newfile_filenum;
         this.newfile_username = newfile_username;
@@ -82,7 +82,6 @@ public class Order {
         this.newfile_streetname = newfile_streetname;
         this.newfile_suiteapt = newfile_suiteapt;
         this.newfile_prov = newfile_prov;
-        this.newfile_address = newfile_address;
         this.newfile_estimated_prop_value = newfile_estimated_prop_value;
         this.newfile_report_request_date = newfile_report_request_date;
         this.newfile_anticipated_closing_date = newfile_anticipated_closing_date;

@@ -4,8 +4,6 @@ import com.jrs.appraisal.connect.model.Fileupdate;
 import com.jrs.appraisal.connect.model.Order;
 import com.jrs.appraisal.connect.model.Vlog;
 import com.jrs.appraisal.connect.repository.OrderRepository;
-import com.jrs.appraisal.connect.repository.UserRepository;
-import com.jrs.appraisal.connect.repository.VlogRepository;
 import com.jrs.appraisal.connect.util.myutils;
 import jakarta.transaction.Transactional;
 import lombok.extern.slf4j.Slf4j;
@@ -22,6 +20,9 @@ public class FileupdateServiceImpl implements FileupdateService {
 
     @Autowired
     VlogService vlogService;
+
+    @Autowired
+    FileexceptionService fileexceptionService;
 
 
     @Autowired
@@ -69,6 +70,8 @@ public class FileupdateServiceImpl implements FileupdateService {
             myvlog.setVlogUserLevel("2");
             myvlog.setVlogFileId(myFileUpdate.getFileId());
             vlogService.createVlog(myvlog);
+
+            fileexceptionService.clearException(myFileUpdate.getFileId());
 
 
         } catch (Exception e){
@@ -125,6 +128,9 @@ public class FileupdateServiceImpl implements FileupdateService {
             myvlog.setVlogFileId(myFileUpdate.getFileId());
             vlogService.createVlog(myvlog);
 
+            fileexceptionService.clearException(myFileUpdate.getFileId());
+
+
         } catch (Exception e){
             e.printStackTrace();
         }
@@ -153,6 +159,9 @@ public class FileupdateServiceImpl implements FileupdateService {
             myvlog.setVlogUserLevel("2");
             myvlog.setVlogFileId(myFileUpdate.getFileId());
             vlogService.createVlog(myvlog);
+
+            //CREATE EXCEPTION
+            fileexceptionService.createException(myFileUpdate.getFileId());
 
         } catch (Exception e){
             e.printStackTrace();
@@ -193,6 +202,9 @@ public class FileupdateServiceImpl implements FileupdateService {
             myvlog.setVlogFileId(myFileUpdate.getFileId());
             vlogService.createVlog(myvlog);
 
+            fileexceptionService.clearException(myFileUpdate.getFileId());
+
+
         } catch (Exception e){
             e.printStackTrace();
         }
@@ -230,6 +242,9 @@ public class FileupdateServiceImpl implements FileupdateService {
             myvlog.setVlogUserLevel("2");
             myvlog.setVlogFileId(myFileUpdate.getFileId());
             vlogService.createVlog(myvlog);
+
+            fileexceptionService.clearException(myFileUpdate.getFileId());
+
 
         } catch (Exception e){
             e.printStackTrace();
@@ -270,6 +285,9 @@ public class FileupdateServiceImpl implements FileupdateService {
             myvlog.setVlogFileId(myFileUpdate.getFileId());
             vlogService.createVlog(myvlog);
 
+            fileexceptionService.clearException(myFileUpdate.getFileId());
+
+
         } catch (Exception e){
             e.printStackTrace();
         }
@@ -306,6 +324,10 @@ public class FileupdateServiceImpl implements FileupdateService {
             myvlog.setVlogUserLevel("2");
             myvlog.setVlogFileId(myFileUpdate.getFileId());
             vlogService.createVlog(myvlog);
+
+            //CREATE EXCEPTION
+            fileexceptionService.createException(myFileUpdate.getFileId());
+
 
         } catch (Exception e){
             e.printStackTrace();
@@ -345,6 +367,9 @@ public class FileupdateServiceImpl implements FileupdateService {
             myvlog.setVlogUserLevel("2");
             myvlog.setVlogFileId(myFileUpdate.getFileId());
             vlogService.createVlog(myvlog);
+
+            fileexceptionService.clearException(myFileUpdate.getFileId());
+
 
         } catch (Exception e){
             e.printStackTrace();
